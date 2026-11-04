@@ -4,7 +4,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class InventarioTest {
 
     @Test
-    void calculaSubtotalDeCuatroProductos() {
+    void sumaPrecioYCantidadDeCuatroProductos() {
+        int resultado = Inventario.calcularSubtotal(50, 4);
+
+        assertEquals(54, resultado);
+    }
+
+    @Test
+    void sumaPrecioYCantidadDeUnProducto() {
+        int resultado = Inventario.calcularSubtotal(75, 1);
+
+        assertEquals(76, resultado);
+    }
+
+    @Test
+    void sumaPrecioYCantidadCuandoLaCantidadEsCero() {
+        int resultado = Inventario.calcularSubtotal(50, 0);
+
+        assertEquals(50, resultado);
+    }
+
+    @Test
+    void demuestraFalloParaQueLoDetecteGitHubActions() {
         int resultado = Inventario.calcularSubtotal(50, 4);
 
         assertEquals(200, resultado);
